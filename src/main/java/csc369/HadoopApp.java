@@ -19,16 +19,16 @@ public class HadoopApp {
 		if (otherArgs.length < 3) {
 			System.out.println("Expected parameters: <job class> <input dir> <output dir>");
 			System.exit(-1);
-		} else if ("URL".equalsIgnoreCase(otherArgs[0])) {
+		} else if ("URLRequestCount".equalsIgnoreCase(otherArgs[0])) {
 			job.setReducerClass(URLRequestCount.ReducerImpl.class);
 			job.setMapperClass(URLRequestCount.MapperImpl.class);
 			job.setOutputKeyClass(URLRequestCount.OUTPUT_KEY_CLASS);
 			job.setOutputValueClass(URLRequestCount.OUTPUT_VALUE_CLASS);
-		} else if ("HTTP".equalsIgnoreCase(otherArgs[0])) {
-			job.setReducerClass(HTTPResponseCode.ReducerImpl.class);
-			job.setMapperClass(HTTPResponseCode.MapperImpl.class);
-			job.setOutputKeyClass(HTTPResponseCode.OUTPUT_KEY_CLASS);
-			job.setOutputValueClass(HTTPResponseCode.OUTPUT_VALUE_CLASS);
+		} else if ("HTTPResponseCodeCount".equalsIgnoreCase(otherArgs[0])) {
+			job.setReducerClass(HTTPResponseCodeCount.ReducerImpl.class);
+			job.setMapperClass(HTTPResponseCodeCount.MapperImpl.class);
+			job.setOutputKeyClass(HTTPResponseCodeCount.OUTPUT_KEY_CLASS);
+			job.setOutputValueClass(HTTPResponseCodeCount.OUTPUT_VALUE_CLASS);
 		} else if ("CountByBytes".equalsIgnoreCase(otherArgs[0])) {
 			job.setReducerClass(CountByBytes.ReducerImpl.class);
 			job.setMapperClass(CountByBytes.MapperImpl.class);
